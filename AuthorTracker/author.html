@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Authors</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f8f8;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+    }
+
+    header {
+      margin-top: 1rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      color: #e66c3c;
+    }
+
+    .author-form {
+      background-color: #fff;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 600px;
+      margin: 2rem 0;
+    }
+
+    .author-form h2 {
+      margin-bottom: 1rem;
+      color: #e66c3c;
+    }
+
+    .author-form label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+    }
+
+    .author-form input[type="text"],
+    .author-form input[type="url"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    .author-form button {
+      background-color: #ff7f50;
+      color: white;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .author-form button:hover {
+      background-color: #e66c3c;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="logo">
+        <h1>AuthorTracker</h1>
+    </div>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="view.html">Collection</a></li>
+        <li><a href="author.html" class="active">Authors</a></li>
+        <li><a href="book.html">Book</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="search.html">Search</a></li>
+    </ul>
+  </nav>
+
+  <!-- Header -->
+  <header>
+    <h1>Manage Authors</h1>
+  </header>
+
+  <!-- Author Form -->
+  <section class="author-form">
+    <h2>Add a New Author</h2>
+    <form id="authorForm" onsubmit="addAuthor(event)">
+      <label for="name">Author Name:</label>
+      <input type="text" id="name" name="name" placeholder="Enter author's name" required>
+
+      <button type="submit">Add Author</button>
+    </form>
+    <div id="output"></div>
+  </section>
+
+  <script>
+    function addAuthor(event) {
+      event.preventDefault(); // Prevent form from submitting normally
+      const name = document.getElementById('name').value;
+
+      // Check if input is not empty
+      if (name.trim() !== '') {
+        // Display the author's name (you can extend this to send data to a server)
+        document.getElementById('output').innerHTML = `<p>Author <strong>${name}</strong> has been added successfully!</p>`;
+
+        // Clear the input field after submission
+        document.getElementById('name').value = '';
+      } else {
+        document.getElementById('output').innerHTML = `<p style="color: red;">Please enter a valid name.</p>`;
+      }
+    }
+  </script>
+</body>
+</html>

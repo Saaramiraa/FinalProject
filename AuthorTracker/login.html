@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Form Styles */
+    .form-container {
+      max-width: 400px;
+      margin: 3rem auto;
+      padding: 2rem;
+      background: #f9f9f9;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .form-container h1 {
+      font-size: 2rem;
+      color: #333;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .form-container label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+      color: #555;
+    }
+    .form-container input {
+      width: 100%;
+      padding: 0.8rem;
+      margin-bottom: 1.5rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .form-container button {
+      width: 100%;
+      background: var(--primary-color);
+      color: rgb(12, 12, 12);
+      border: none;
+      padding: 0.8rem;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .form-container button:hover {
+      background: #e66c3c;
+    }
+    .form-container p {
+      text-align: center;
+      margin-top: 1rem;
+    }
+    .form-container p a {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .form-container p a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="logo">
+      <h1>AuthorTracker</h1>
+    </div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="view.html">Collection</a></li>
+      <li><a href="author.html">Authors</a></li>
+      <li><a href="book.html">Book</a></li>
+      <li><a href="login.html" class="active">Login</a></li>
+      <li><a href="search.html">Search</a></li>
+    </ul>
+  </nav>
+
+  <!-- Login Form -->
+  <div class="form-container">
+    <h1>Login</h1>
+    <form action="#" method="POST">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+      
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="Enter your password" required>
+      
+      <button type="submit">Login</button>
+    </form>
+    <p>Don't have an account? <a href="register.html">Register here</a></p>
+  </div>
+</body>
+</html>

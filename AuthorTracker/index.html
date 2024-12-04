@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AuthorTracker | Welcome</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* General Reset */
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      background: #f5f5f5;
+      color: #333;
+    }
+
+    /* Top Navigation */
+    .navbar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: transparent;
+      z-index: 100;
+    }
+
+    .navbar .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .navbar .nav-links a {
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: bold;
+      color: #333;
+      transition: color 0.3s ease;
+    }
+
+    .navbar .nav-links a:hover {
+      color: #ff7f50;
+    }
+
+    .navbar .auth-buttons {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .navbar .auth-buttons button {
+      background: none;
+      color: #333;
+      border: 1px solid #ff7f50;
+      padding: 8px 16px;
+      font-size: 0.9rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .navbar .auth-buttons button:hover {
+      background: #ff7f50;
+      color: white;
+    }
+
+    /* Main Content */
+    .container {
+      display: flex;
+      flex: 1;
+    }
+
+    /* Left Section */
+    .left-section {
+      background: rgb(195, 141, 101);
+      color: #050505;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    .left-section h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .left-section p {
+      margin-bottom: 2rem;
+      font-size: 1.2rem;
+      text-align: center;
+    }
+
+    .left-section .get-started-btn {
+      background: #0b0a0a;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .left-section .get-started-btn:hover {
+      background: #5a3f35;
+    }
+
+    /* Right Section */
+    .right-section {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+      background: url("images/author.png") no-repeat center center / cover;
+      color: white;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+    }
+
+    .right-section h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .right-section p {
+      font-size: 1.2rem;
+      text-align: center;
+      max-width: 80%;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .nav-links, .auth-buttons {
+        flex-direction: column;
+      }
+
+      .container {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Top Navigation -->
+  <div class="navbar">
+    <div class="nav-links">
+      <a href="author.html">Author</a>
+      <a href="book.html">Books</a>
+      <a href="view.html">Collection</a>
+    </div>
+    <div class="auth-buttons">
+      <button onclick="window.location.href='register.html'">Register</button>
+      <button onclick="window.location.href='login.html'">Login</button>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="container">
+    <!-- Left Section -->
+    <div class="left-section">
+      <h1>Track Authors, Discover Stories</h1>
+      <p>Track your favorite authors and their works, or get started by creating an account today.</p>
+      <button class="get-started-btn" onclick="window.location.href='search.html'">Get Started</button>
+    </div>
+
+    <!-- Right Section -->
+    <div class="right-section">
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Post a New Book</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Form Styles */
+    .form-container {
+      max-width: 500px;
+      margin: 3rem auto;
+      padding: 1.5rem;
+      background: #f9f9f9;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .form-container h1 {
+      font-size: 2rem;
+      color: #333;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    .form-container label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+      color: #555;
+    }
+    .form-container input, 
+    .form-container select, 
+    .form-container button {
+      width: calc(100% - 20px); /* Added padding offset for a smaller width */
+      padding: 0.7rem;
+      margin-bottom: 1.2rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .form-container button {
+      background: var(--primary-color, #ff7f50);
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+    .form-container button:hover {
+      background: #e66c3c;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .form-container {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="logo">
+      <h1>AuthorTracker</h1>
+    </div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="view.html">Collection</a></li>
+      <li><a href="author.html">Authors</a></li>
+      <li><a href="book.html" class="active">Book</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="search.html">Search</a></li>
+    </ul>
+  </nav>
+
+  <!-- Book Form -->
+  <div class="form-container">
+    <h1>Post a New Book</h1>
+    <form action="#" method="POST">
+      <!-- Book Title -->
+      <label for="book-title">Book Title</label>
+      <input type="text" id="book-title" name="title" placeholder="Enter book title" required>
+
+      <!-- Author Name -->
+      <label for="author-name">Author Name</label>
+      <input type="text" id="author-name" name="author" placeholder="Enter author name" required>
+
+      <!-- Genre -->
+      <label for="genre">Genre</label>
+      <select id="genre" name="genre" required>
+        <option value="" disabled selected>Select genre</option>
+        <option value="fiction">Fiction</option>
+        <option value="non-fiction">Non-Fiction</option>
+        <option value="science-fiction">Science Fiction</option>
+        <option value="fantasy">Fantasy</option>
+        <option value="biography">Biography</option>
+        <option value="self-help">Self-Help</option>
+        <option value="other">Other</option>
+      </select>
+
+      <!-- Submit Button -->
+      <button type="submit">Post Book</button>
+    </form>
+  </div>
+</body>
+</html>
