@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AuthorTracker | Welcome</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <style>
+    /* General Reset */
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      background: #f5f5f5;
+      color: #333;
+    }
+
+    /* Main Content */
+    .container {
+      display: flex;
+      flex: 1;
+    }
+
+    /* Left Section */
+    .left-section {
+      background: rgb(195, 141, 101);
+      color: #050505;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    .left-section h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .left-section p {
+      margin-bottom: 2rem;
+      font-size: 1.2rem;
+      text-align: center;
+    }
+
+    .left-section .get-started-btn {
+      background: #0b0a0a;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .left-section .get-started-btn:hover {
+      background: #5a3f35;
+    }
+
+    /* Right Section */
+    .right-section {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+      background: url("views/images/colleen-hoover.jpg") no-repeat center center / cover;
+      color: white;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+    }
+
+    .right-section h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .right-section p {
+      font-size: 1.2rem;
+      text-align: center;
+      max-width: 80%;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+
+    footer.footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .nav-links, .auth-buttons {
+        flex-direction: column;
+      }
+
+      .container {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Top Navigation -->
+  <nav class="navbar navbar-expand-lg bg-dark">
+    <div class="container">
+      <a class="navbar-brand text-light" href="/">Home</a>
+      <a class="navbar-brand text-light" href="/authors">Authors</a>
+      <a class="navbar-brand text-light" href="/books">Books</a>
+      <a class="navbar-brand text-light" href="/collection">Collection</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container">
+    <!-- Left Section -->
+    <div class="left-section mt-3">
+      <h1>Track Authors, Discover Stories</h1>
+      <p>Track your favorite authors and their works, or get started by creating an account today.</p>
+      <button class="get-started-btn" onclick="window.location.href='/authors'">Get Started</button>
+    </div>
+
+    <!-- Right Section -->
+    <div class="right-section">
+      <h1></h1>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>&copy; 2024 AuthorTracker. All rights reserved.</p>
+  </footer>
+</body>
+</html>

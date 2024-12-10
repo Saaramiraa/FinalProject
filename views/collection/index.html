@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Collection Page</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <style>
+    /* General Reset */
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      background: #f5f5f5;
+      color: #333;
+    }
+
+    .collection-container {
+      padding: 2rem;
+      width: 75%;
+      margin-left: auto;
+      margin-right: auto;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .search-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+
+    .search-bar input {
+      width: 70%;
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+
+    .search-bar input:focus {
+      border-color: #e66c3c;
+    }
+
+    .collection-list table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+
+    .collection-list th, .collection-list td {
+      padding: 0.8rem;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .collection-list th {
+      background-color: #e66c3c;
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: 0.05rem;
+    }
+
+    .collection-list tr:hover {
+      background-color: #f2f2f2;
+    }
+
+    .collection-list td button {
+      background-color: #333;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      margin-right: 0.5rem;
+      transition: background-color 0.3s;
+    }
+
+    .collection-list td button:hover {
+      background-color: #e66c3c;
+    }
+
+    footer.footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+   <!-- Top Navigation -->
+   <nav class="navbar navbar-expand-lg bg-dark">
+    <div class="container">
+      <a class="navbar-brand text-light" href="/">Home</a>
+      <a class="navbar-brand text-light" href="/authors">Authors</a>
+      <a class="navbar-brand text-light" href="/books">Books</a>
+      <a class="navbar-brand text-light" href="/collection">Collection</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </nav>
+
+  <header>
+    <h1 class="d-flex justify-content-center">Collection List</h1>
+    <p class="d-flex justify-content-center">View and manage your collection of books!</p>
+  </header>
+
+  <main class="collection-container">
+    <!-- Search bar -->
+    <section class="search-bar">
+      <div>
+        <a href="/collection/add" class="btn btn-primary">Add Book</a>  
+      </div>
+    </section>
+
+    <!-- Collection table -->
+    <section class="collection-list">
+      <table class="table ms-auto">
+        <thead>
+          <tr>
+            <th>Book Title</th>
+            <th>Author</th>
+            <th>Genre</th>
+            <th>Release Date</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="collection-body">
+          <!-- Dynamic content -->
+          {{ range .books }}
+          <tr>
+            <td>{{ .Title }}</td>
+            <td>{{ .AuthorName }}</td>
+            <td>{{ .Genre }}</td>
+            <td>{{ .ReleaseDate }}</td>
+            <td>
+              <a href="/collection/edit?id={{ .Id }}" class="btn btn-warning text-light">Edit</a>
+              <a href="/collection/delete?id={{ .Id }}" class="btn btn-danger text-light" onclick="return confirm('Are you sure to remove this book?')">Delete</a>
+            </td>
+          </tr>
+          {{ end }}
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2024 AuthorTracker. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
